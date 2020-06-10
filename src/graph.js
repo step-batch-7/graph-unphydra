@@ -9,14 +9,20 @@ const bfs = function (pairs, source, target) {
   const queue = [source];
   while (queue.length > 0) {
     const node = queue.shift();
+    let isTarget = false;
     const childNodes = pairs.reduce((result, [from, to]) => {
-      if (from === node && !visitedNodes.includes(to)) {
-        visitedNodes.push(to);
-        result.push(to);
+      if (from === node) {
+        if (to === target) {
+          isTarget = true;
+        }
+        if (!visitedNodes.includes(to)) {
+          visitedNodes.push(to);
+          result.push(to);
+        }
       }
       return result;
     }, []);
-    if (childNodes.includes(target)) return true;
+    if (isTarget) return true;
     queue.push(...childNodes);
   }
   return false;

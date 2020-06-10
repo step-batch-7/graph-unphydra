@@ -37,4 +37,9 @@ describe('bfs', () => {
     const actual = bfs(testSample, 'mm', 'jj');
     assert.deepStrictEqual(actual, false);
   });
+
+  it('should return true for path from bb to bb for the testSample', () => {
+    const actual = bfs(testSample, 'bb', 'bb');
+    assert.deepStrictEqual(actual, true);
+  });
 });
