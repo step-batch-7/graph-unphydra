@@ -1,11 +1,11 @@
-//Example 
+//Example
 // Pairs => [[from,to],[to,from]]
 // Source => from
-// To => to 
+// To => to
 // Should return true.
 
-const bfs = function(pairs,source,target){
-  
+const bfs = function (pairs, source, target) {
+  return true;
 };
 
-module.exports = {bfs};
+module.exports = { bfs };
